@@ -2,8 +2,8 @@
   "name": "bookinglab",
   "version": "0.0.0",
   "scripts": {
-    "setup": "npm i --save-dev typescript && npm i @angular/cli",
-    "ng": "npx ng",
+    "setup": "npm install && npm i --save-dev typescript && npm i -g @angular/cli && npm init",
+    "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
