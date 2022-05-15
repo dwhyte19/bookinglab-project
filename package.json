@@ -2,7 +2,7 @@
   "name": "bookinglab",
   "version": "0.0.0",
   "scripts": {
-    "setup": "npm install && npm i --save-dev typescript && npm i -g @angular/cli && npm init",
+    "setup": "npm install && npm i --save-dev typescript bootstrap && npm i -g @angular/cli && npm init",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -29,6 +29,7 @@
     "@angular/compiler-cli": "~13.3.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "bootstrap": "^5.1.3",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -36,5 +37,17 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.6.2"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwhyte19/bookinglab-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwhyte19/bookinglab-project/issues"
+  },
+  "homepage": "https://github.com/dwhyte19/bookinglab-project#readme"
 }
