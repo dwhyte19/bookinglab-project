@@ -25,9 +25,8 @@ import { SearchService } from './search.service';
     PreviewComponent,
     ShareComponent,
     NavComponent,
-    AboutComponent,
-    ImageComponent
-  ],
+    AboutComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
