@@ -31,6 +31,9 @@ export class DownloadsService {
     if(image.url){
       new JsFileDownloader({ 
         url: image.url,
+        nameCallback: function(name) {
+          return name + ".jpg";
+        }
       })
       .then(function (this: typeof DownloadsService) {
         self.statusMsg = "Download Completed";
