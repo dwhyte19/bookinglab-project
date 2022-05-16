@@ -2,10 +2,10 @@
     <p class="term">{{count}} results for "{{term}}"</p>
 
     <ul>
-        <li class="item" *ngFor="let image of images">
+        <a class="item" *ngFor="let image of images" (click)="changeImage(image)">
             <img src="{{image.url}}" />
             <h2 class="name">{{image.name}}</h2>
-        </li>
+        </a>
     </ul>
 
 </div>

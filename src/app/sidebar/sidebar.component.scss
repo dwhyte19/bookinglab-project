@@ -1,7 +1,6 @@
 #sidebar{
     position: relative;
     max-width: 400px;
-    height: 100vh;
     background: #F4F4F4;
     overflow-y: visible;
 
@@ -28,13 +27,19 @@
             margin: 10px;
             box-sizing: border-box;
             overflow: hidden;
+            cursor: pointer;
 
             &:hover img{
                 transform: scale(1.025);
             }
 
+            &:hover .name{
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+
             img{
-                transition: transform 0.2s;
+                transition: transform 0.5s;
                 position: relative;
                 width: 100%;
                 border-radius: 5px;
@@ -53,6 +58,7 @@
                 color: white;
                 text-shadow: 2px 2px rgba(0,0,0,0.25);
                 word-break: break-word;
+                transition: padding 0.5s;
             }
             
             .description{

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ImageComponent } from '../image/image.component';
+import { PreviewService } from '../preview.service';
 
 @Component({
   selector: 'app-preview',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreviewComponent implements OnInit {
 
-  constructor() { }
+  image: ImageComponent = {};
+  
+
+  constructor(private previewService: PreviewService) { 
+    this.previewServiceListener();
+  }
 
   ngOnInit(): void {
+  }
+
+  previewServiceListener(){
+    this.previewService.data.subscribe((res: any) => {
+      console.log(res);
+      this.image = res;
+    })
   }
 
 }
