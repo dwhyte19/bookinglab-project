@@ -35,7 +35,7 @@ export class SearchService {
 
         for(let item of res.results) {
 
-          let newImage: ImageComponent  = {id: item.id, url: item.urls.full, thumbnail: item.urls.thumb, download: item.urls.download_location, name: item.user.username, description: item.description, blur: item.blur_hash};
+          let newImage: ImageComponent  = {id: item.id, url: item.urls.regular, thumbnail: item.urls.thumb, download: item.links.download_location, name: item.user.username, description: item.description, blur: item.blur_hash};
           this.images.push(newImage);
         }
 

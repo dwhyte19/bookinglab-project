@@ -12,9 +12,11 @@ export class PreviewComponent implements OnInit {
 
   image: ImageComponent = {};
   massive: string = "WELCOME";
+  downloadMsg: string = "Download";
 
   constructor(private previewService: PreviewService, private downloadsService: DownloadsService) { 
     this.previewServiceListener();
+    this.downloadServiceListener();
   }
 
   ngOnInit(): void {
@@ -22,28 +24,26 @@ export class PreviewComponent implements OnInit {
 
   previewServiceListener(){
     this.previewService.data.subscribe((res: any) => {
-      console.log(res);
+      //console.log(res);
       this.image = res;
       this.massive = "LOADING...";
+      this.downloadMsg = "Download";
     })
   }
 
 
+  downloadServiceListener(){
+    this.downloadsService.data.subscribe((res: any) => {
+      //console.log(res);
+      this.downloadMsg = this.downloadsService.statusMsg;
+    })
+  }
+
+
+
   //download image using component
   downloadImage(image: ImageComponent){
-    this.downloadsService.downloadImage(image)
-    .subscribe(blob => {
-
-      var binaryData = [];
-      binaryData.push(blob);
-
-      const a = document.createElement('a');
-        const objectUrl = URL.createObjectURL(new Blob(binaryData, {type: "image/jpeg"}));
-        a.href = objectUrl;
-        a.download = 'image.jpg';
-        a.click();
-        URL.revokeObjectURL(objectUrl);
-      });
+    this.downloadsService.downloadImage(image);
   }
 
 }

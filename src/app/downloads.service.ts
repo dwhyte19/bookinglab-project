@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import JsFileDownloader from 'js-file-downloader';
 import { EMPTY, Observable, Subject } from 'rxjs';
 import { ImageComponent } from './image/image.component';
 
@@ -10,7 +11,7 @@ export class DownloadsService {
 
   data = new Subject();
   headers = new Headers();
-  private downloads: ImageComponent[] = [];
+  public statusMsg: string = "";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -24,15 +25,32 @@ export class DownloadsService {
   }
 
 
-  public downloadImage(image: ImageComponent): Observable<any>{
+  public downloadImage(image: ImageComponent){
 
-    if(image && image.url){
-      return this.httpClient.get(image.url, { responseType: 'blob', observe: 'response' });
+    var self = this; 
+    if(image.url){
+      new JsFileDownloader({ 
+        url: image.url,
+      })
+      .then(function (this: typeof DownloadsService) {
+        self.statusMsg = "Download Completed";
+        self.data.next(self.statusMsg);
+        // Called when download ended
+      })
+      .catch(function (error) {
+        self.statusMsg = "Download Failed";
+        self.data.next(self.statusMsg);
+        // Called when an error occurred
+      });
     }
-    return EMPTY;
-
-    //https://api.unsplash.com/search/photos?page=1&query=office
 
   }
+
+
+  public process (event: ProgressEvent) {
+    if (!event.lengthComputable) return; // guard
+    var downloadingPercentage = Math.floor(event.loaded / event.total * 100);
+    // what to do ...
+  };
 
 }
