@@ -12,8 +12,6 @@ export class SearchService {
   public resultsTerm = "";
   public resultsCount = 0;
 
-
-  auth_token: string = "asasa21212....";
   data = new Subject();
   headers = new Headers();
   private images: ImageComponent[] = [];
@@ -37,7 +35,7 @@ export class SearchService {
 
         for(let item of res.results) {
 
-          let newImage: ImageComponent  = {id: item.id, url: item.urls.full, name: item.user.username, description: item.description, blur: item.blur_hash};
+          let newImage: ImageComponent  = {id: item.id, url: item.urls.full, thumbnail: item.urls.thumb, download: item.urls.download_location, name: item.user.username, description: item.description, blur: item.blur_hash};
           this.images.push(newImage);
         }
 
@@ -49,8 +47,6 @@ export class SearchService {
       console.log(this.images)
 
       return this.images;
-      
-
     
     });
 
