@@ -1,1 +1,11 @@
-<p>sidebar works!</p>
+<div id="sidebar">
+    <p class="term">{{count}} results for "{{term}}"</p>
+
+    <ul>
+        <li class="item" *ngFor="let image of images">
+            <img src="{{image.url}}" />
+            <h2 class="name">{{image.name}}</h2>
+        </li>
+    </ul>
+
+</div>

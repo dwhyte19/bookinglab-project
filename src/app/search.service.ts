@@ -9,7 +9,8 @@ import { ImageComponent } from './image/image.component';
 })
 export class SearchService {
 
-
+  public resultsTerm = "";
+  public resultsCount = 0;
 
 
   auth_token: string = "asasa21212....";
@@ -40,6 +41,8 @@ export class SearchService {
           this.images.push(newImage);
         }
 
+        this.resultsTerm = term;
+        this.resultsCount = res.total;
         this.data.next(this.images);
 
       console.log(this.data);
