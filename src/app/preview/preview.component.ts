@@ -10,7 +10,7 @@ import { PreviewService } from '../preview.service';
 export class PreviewComponent implements OnInit {
 
   image: ImageComponent = {};
-  
+  massive: string = "WELCOME";
 
   constructor(private previewService: PreviewService) { 
     this.previewServiceListener();
@@ -23,6 +23,7 @@ export class PreviewComponent implements OnInit {
     this.previewService.data.subscribe((res: any) => {
       console.log(res);
       this.image = res;
+      this.massive = "LOADING...";
     })
   }
 

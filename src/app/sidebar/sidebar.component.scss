@@ -1,8 +1,10 @@
 #sidebar{
     position: relative;
     max-width: 400px;
+    width: 400px;
     background: #F4F4F4;
     overflow-y: visible;
+    padding-top: 72px;
 
     .term{
         position: sticky;
