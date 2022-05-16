@@ -11,6 +11,10 @@ import { ShareComponent } from './share/share.component';
 import { NavComponent } from './nav/nav.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutComponent } from './about/about.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ImageComponent } from './image/image.component';
+import { SearchService } from './search.service';
+
 
 @NgModule({
   declarations: [
@@ -21,14 +25,16 @@ import { AboutComponent } from './about/about.component';
     PreviewComponent,
     ShareComponent,
     NavComponent,
-    AboutComponent
+    AboutComponent,
+    ImageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
