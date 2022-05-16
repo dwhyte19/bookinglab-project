@@ -1,18 +1,26 @@
 #nav{
-    background: rgb(33, 53, 186);
+    background: #0E2A7C;
     width: 100%;
-    border-bottom: 3px solid rgba(0,0,0,0.3);
+
+    .search{
+        display: inline-block;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 25px;
+        width: 100%;
+        max-width: 380px;
+    }
 
     ul{
         width: inherit;
         margin: 0;
+        display: inline;
 
         li{
             color: white;
             list-style: none;
             font-weight: bold;
             display: inline-block;
-
 
             .active{
 
