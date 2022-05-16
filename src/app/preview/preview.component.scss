@@ -6,6 +6,7 @@
     bottom: 0;
     padding: 5em;
     background: #424242;
+    font-size: 100%;
 
     .massive{
         position: absolute;
@@ -37,6 +38,7 @@
         color: black;
         border-radius: 25px;
         text-align: center;
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.125), 0px 0px 10px rgba(0,0,0,0.125);
 
         .title{
             font-weight: bold;
@@ -51,8 +53,9 @@
             padding: 10px 15px;
             display: inline-block;
             margin-top: 1em;
+            cursor: pointer;
 
-            &hover{
+            &:hover{
                 background: rgb(30, 158, 30);
             }
         }
