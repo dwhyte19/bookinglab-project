@@ -31,6 +31,7 @@ export class DownloadsService {
     var self = this; 
     if(image.url){
       self.statusMsg = "Downloading...";
+      self.data.next(self.statusMsg);
       new JsFileDownloader({ 
         url: image.url,
         nameCallback: function(name) {
