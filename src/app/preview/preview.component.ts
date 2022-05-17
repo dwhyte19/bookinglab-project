@@ -17,6 +17,7 @@ export class PreviewComponent implements OnInit {
   showShare: boolean = false;
   shareUrl = "";
 
+
   constructor(private previewService: PreviewService, private downloadsService: DownloadsService) { 
     this.sharedImageChecker();
     this.previewServiceListener();
@@ -27,6 +28,7 @@ export class PreviewComponent implements OnInit {
   }
 
 
+  //handle shared url param and load image
   sharedImageChecker(){
 
     const queryString = window.location.search;
