@@ -32,7 +32,7 @@ export class PreviewService {
 
   
   //fetch image by id for internal shared links
-  public fetchImageById(id : string){
+  public fetchImageById(id: string){
 
     this.httpClient.get(`https://api.unsplash.com/photos/${id}`, this.httpOptions)
     .subscribe((res: any)=>{
@@ -43,10 +43,6 @@ export class PreviewService {
       }
 
       this.data.next(this.previewImage);
-
-      console.log(this.data);
-      console.log(this.previewImage)
-
       return this.previewImage;
       
     });

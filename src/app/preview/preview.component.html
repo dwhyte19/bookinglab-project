@@ -1,12 +1,17 @@
 <div id="preview">
 
-    <div class="massive">{{massive}}</div>
+    <div class="massive">
+        <p class="title">{{massive}}</p>
+        <p class="subtitle">{{subtitle}}</p>
+    </div>
 
     <img src="{{image.url}}" />
 
-    <div class="bubble">
+    <div class="bubble" *ngIf="image.url">
         <h2 class="name">{{image.name}}</h2>
         <div class="download" (click)="downloadImage(image)">{{downloadMsg}}</div>
+        <div class="share" (click)="shareImage()">Share</div>
+        <input type="text" class="share-link" [ngClass]="{'show' : showShare}" value="{{shareUrl}}" onClick="this.select();" />
     </div>
 
 </div>
