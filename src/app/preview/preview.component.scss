@@ -17,14 +17,16 @@
         text-align: center;
         transform: translate(-50%, -50px);
         color: rgba(255, 255, 255, 0.35);
+        font-size: inherit;
 
         .title{
             font-weight: bold;
-            font-size: 9em;
+            font-size: 4em;
+            word-break: break-all;
         }
 
         .subtitle{
-            font-size: 2.5em;
+            font-size: 2em;
         }
     }
 
@@ -106,4 +108,67 @@
             margin-top: 20px;
         }
     }
+}
+
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { 
+
+    #preview{
+        font-size: 95%;
+        left: 350px;
+        padding: 3em;
+
+        .massive{
+
+            .title{
+                font-size: 3em;
+            }
+        }
+    }
+}
+
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { 
+
+    #preview{
+        font-size: 90%;
+        left: 300px;
+        padding: 2em;
+
+        .massive{
+
+            .title{
+                font-size: 2em;
+            }
+
+            .subtitle{
+                font-size: 1.5em;
+            }
+        }
+    }
+}
+
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+
+    #preview{
+        font-size: 85%;
+        left: 250px;
+        padding: 1em;
+
+        .massive{
+
+            .title{
+                font-size: 1em;
+            }
+
+            .subtitle{
+                font-size: .75em;
+            }
+        }
+    }
+
 }
