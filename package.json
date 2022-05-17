@@ -2,7 +2,8 @@
   "name": "bookinglab",
   "version": "0.0.0",
   "scripts": {
-    "setup": "npm i -g @angular/cli && npm i --save-dev typescript bootstrap angular-blurhash js-file-downloader && ng add @ng-bootstrap/ng-bootstrap",
+    "setupfull": "del package-lock.json && npm i -g @angular/cli && npm i --save-dev typescript bootstrap angular-blurhash js-file-downloader && ng add @ng-bootstrap/ng-bootstrap",
+    "setup": "npm install",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
