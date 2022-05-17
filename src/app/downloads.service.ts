@@ -25,10 +25,12 @@ export class DownloadsService {
   }
 
 
+  //download image and track progress
   public downloadImage(image: ImageComponent){
 
     var self = this; 
     if(image.url){
+      self.statusMsg = "Downloading...";
       new JsFileDownloader({ 
         url: image.url,
         nameCallback: function(name) {
@@ -38,22 +40,20 @@ export class DownloadsService {
       .then(function (this: typeof DownloadsService) {
         self.statusMsg = "Download Completed";
         self.data.next(self.statusMsg);
-        // Called when download ended
       })
       .catch(function (error) {
         self.statusMsg = "Download Failed";
         self.data.next(self.statusMsg);
-        // Called when an error occurred
       });
     }
 
   }
 
 
+  //this is supposed to track the progress in more detail (as percentage), but was causing issues.
   public process (event: ProgressEvent) {
-    if (!event.lengthComputable) return; // guard
-    var downloadingPercentage = Math.floor(event.loaded / event.total * 100);
-    // what to do ...
+    if (!event.lengthComputable) return;
+    var percentComplete = Math.floor(event.loaded / event.total * 100);
   };
 
 }

@@ -28,29 +28,24 @@ export class SearchService {
   }
 
 
+  //get unsplash search results from api
   public fetchSearch(term: string){
 
     this.httpClient.get(`https://api.unsplash.com/search/photos?page=1&query=${term}`, this.httpOptions)
     .subscribe((res: any)=>{
 
-        for(let item of res.results) {
+      for(let item of res.results) {
+        let newImage: ImageComponent  = {id: item.id, url: item.urls.regular, thumbnail: item.urls.thumb, download: item.links.download_location, name: item.user.username, description: item.description, blur: item.blur_hash};
+        this.images.push(newImage);
+      }
 
-          let newImage: ImageComponent  = {id: item.id, url: item.urls.regular, thumbnail: item.urls.thumb, download: item.links.download_location, name: item.user.username, description: item.description, blur: item.blur_hash};
-          this.images.push(newImage);
-        }
-
-        this.resultsTerm = term;
-        this.resultsCount = res.total;
-        this.data.next(this.images);
-
-      console.log(this.data);
-      console.log(this.images)
-
+      this.resultsTerm = term;
+      this.resultsCount = res.total;
+      this.data.next(this.images);
       return this.images;
     
     });
 
-    //https://api.unsplash.com/search/photos?page=1&query=office
   }
 
 
