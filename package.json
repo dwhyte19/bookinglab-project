@@ -2,7 +2,7 @@
   "name": "bookinglab",
   "version": "0.0.0",
   "scripts": {
-    "setup": "npm install && npm i --save-dev typescript bootstrap && npm i -g @angular/cli && ng add @ng-bootstrap/ng-bootstrap angular-blurhash js-file-downloader && npm init",
+    "setup": "npm install && npm i --save-dev typescript bootstrap && npm i -g @angular/cli && ng add @ng-bootstrap/ng-bootstrap angular-blurhash js-file-downloader && ng add @angular/material && npm init",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -12,11 +12,13 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.3.0",
+    "@angular/cdk": "^13.3.7",
     "@angular/common": "~13.3.0",
     "@angular/compiler": "~13.3.0",
     "@angular/core": "~13.3.0",
     "@angular/forms": "~13.3.0",
     "@angular/localize": "~13.3.0",
+    "@angular/material": "^13.3.7",
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
