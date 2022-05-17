@@ -34,13 +34,16 @@ export class SearchService {
     this.httpClient.get(`https://api.unsplash.com/search/photos?page=1&query=${term}`, this.httpOptions)
     .subscribe((res: any)=>{
 
+      let newImages: ImageComponent[] = [];
+
       for(let item of res.results) {
         let newImage: ImageComponent  = {id: item.id, url: item.urls.regular, thumbnail: item.urls.thumb, download: item.links.download_location, name: item.user.username, description: item.description, blur: item.blur_hash};
-        this.images.push(newImage);
+        newImages.push(newImage);
       }
 
       this.resultsTerm = term;
       this.resultsCount = res.total;
+      this.images = newImages;
       this.data.next(this.images);
       return this.images;
     

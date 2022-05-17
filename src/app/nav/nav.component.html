@@ -1,7 +1,7 @@
 <div id="nav">
     <div class="container-fluid">
 
-        <input type="text" class="search" (change)="searchChanged($event)" placeholder="Search Unsplash..."/>
+        <input type="text" class="search" [formControl]="inputControl" placeholder="Search Unsplash..."/>
 
         <ul>
             <li><a href="/">Home</a></li>

@@ -12,6 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchService } from './search.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -29,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    BrowserAnimationsModule  ],
+    BrowserAnimationsModule,
+    ReactiveFormsModule  ],
   providers: [SearchService],
   bootstrap: [AppComponent]
 })
