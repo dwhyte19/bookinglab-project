@@ -18,16 +18,10 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  searchServiceListener(){
-    this.searchService.data.subscribe((res: any) => {
-     // this.Component1Data = res;
-    })
-  }
 
+  //send service new search term to fetch
   searchChanged(e: any) {
     this.search = e.target.value;
-
-    //send service new search term to fetch
     this.searchService.fetchSearch(this.search);
   }
 
