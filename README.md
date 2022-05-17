@@ -1,3 +1,17 @@
+
+# setup
+
+
+Welcome to my Angular Project.
+To setup the environment, please do the following:
+
+Run `npm run setup` to install the dependencies.
+Run `npm run start` to run the demo.
+Open `http://localhost:4200/` in your browser to interact with the app.
+
+
+
+
 # Bookinglab
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
