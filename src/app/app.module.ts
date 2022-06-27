@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PreviewComponent } from './preview/preview.component';
-import { ShareComponent } from './share/share.component';
 import { NavComponent } from './nav/nav.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,7 +21,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     SidebarComponent,
     PreviewComponent,
-    ShareComponent,
     NavComponent,
     ],
   imports: [
